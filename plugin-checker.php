@@ -1,5 +1,5 @@
 <?php
-
+header('Content-type: text/plain');
 function deleteDirectory($dir) {
     if (!file_exists($dir)) {
         return true;
@@ -89,20 +89,22 @@ for($i=0; $i<count($current_plugins); $i++){
 
 if(count($unsupported_plugins)>0) {
     for($i=0; $i<count($unsupported_plugins); $i++){
-        $directory_to_remove = "wp-content/plugins/" . $unsupported_plugins[$i];
+        $directory_to_remove = getcwd() . "/wp-content/plugins/" . $unsupported_plugins[$i];
 
         if (!is_dir($directory_to_remove)) {
             echo $directory_to_remove . " is not a valid directory\n";
-            echo "Operation terminating.";
+            echo "Continuing...\n";
+            continue;
         }
 
-        echo "Removing " . $unsupported_plugins[$i] . " from " . $directory_to_remove;
+        echo "Removing " . $unsupported_plugins[$i] . " from " . $directory_to_remove . "\n";
         deleteDirectory($directory_to_remove);
     }
 }else {
-    echo "There are no plugins to remove. I will now delete myself.";
+    echo "There are no plugins to remove.\n";
 }
 
+echo "I will now delete myself.";
 unlink(__FILE__); // self destruct
 
 ?>
