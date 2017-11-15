@@ -99,10 +99,9 @@ if(count($unsupported_plugins)>0) {
         deleteDirectory($directory_to_remove);
     }
 }else {
-    echo "There are no plugins to remove. Please remember to delete me.";
+    echo "There are no plugins to remove. I will now delete myself.";
 }
 
-
-
+unlink(__FILE__); // self destruct
 
 ?>
