@@ -69,7 +69,8 @@ $supported_plugins = [
     "eltdf-cpt",
     "facetwp",
     "json-api",
-    "jsoncontentimporterpro3"
+    "jsoncontentimporterpro3",
+    "capability-manager-enhanced"
 ];
 
 $current_plugins = scandir("wp-content/plugins/");
