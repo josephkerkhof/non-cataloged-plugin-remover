@@ -70,7 +70,8 @@ $supported_plugins = [
     "facetwp",
     "json-api",
     "jsoncontentimporterpro3",
-    "capability-manager-enhanced"
+    "capability-manager-enhanced",
+    "email-subscribers"
 ];
 
 $current_plugins = scandir("wp-content/plugins/");
